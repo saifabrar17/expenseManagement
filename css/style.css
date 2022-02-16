@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header-title{
+    color: #3a3a3a;
+}
+.money-icon{
+    color: #D6B34F;
+}
+
+.input-field{
+    border: none;
+    background-color: #DCDCDC;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    height: 28px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.label-text{
+    font-size: 18px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
