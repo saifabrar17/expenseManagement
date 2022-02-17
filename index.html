@@ -60,14 +60,14 @@
                             </div>
                             <!-- ====TOTAL EXPENSE -->
                             <h5 class="text-center pt-1 pb-3">Total Expense: <span id="expense-total">000</span></h5>
-                            <h5 class="text-center pb-1">Balance: <span id="balance-total">000</span></h5>
+                            <h5 class="text-center pb-1">Balance: <span id="balance-remaining">000</span></h5>
 
                             <!-- ====BONUS SAVINGS==== -->
                             <div class="savings text-center">
                                 <label class="label-text">Save: </label>
                                 <input type="text" class="input-field w-25" id="input-saving-percentage">
                                 <label class="label-text">%</label>
-                                <button type="button" class="btn btn-primary ms-2">Save</button>
+                                <button type="button" onclick="calculateSavings()" class="btn btn-primary ms-2">Save</button>
                             </div>
 
                             <!-- ====Saving Remaining -->
