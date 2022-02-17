@@ -1,63 +1,72 @@
-
 // declaring a function for getting value as number
-function getParsedValueById(idName) {
-    let parsedValue = parseInt(document.getElementById(idName).value);
+function getParsedValueById(id_name) {
+    let parsedValue = parseInt(document.getElementById(id_name).value);
     return parsedValue;
 }
 
-// declaring function to get elements by id
-function getElement(idName) {
-    let element = document.getElementById(idName);
+// declaring function to get element by id for Displaying value to frontend
+function pushElementTo(id_name) {
+    let element = document.getElementById(id_name);
     return element;
 }
 
-function calculatingExpense() {
+function calculateExpense() {
+    //setting all id values to variables (let)
     let incomeAmount = getParsedValueById("input-income");
-    let foodCost = getParsedValueById("input-food");
-    let rentCost = getParsedValueById("input-rent");
-    let clothCost = getParsedValueById("input-cloths");
-    let totalExpense = getElement("expense-total");
-    let balanceAfterExpense = getElement("balance-remaining");
+    let foodExpense = getParsedValueById("input-food");
+    let rentExpense = getParsedValueById("input-rent");
+    let clothExpense = getParsedValueById("input-cloths");
+    let totalExpense = pushElementTo("expense-total");
+    let balanceRemaining = pushElementTo("balance-remaining");
 
-    // total cost
-    let totalCost = foodCost + rentCost + clothCost;
+    // total expense
+    let totalCost = foodExpense + rentExpense + clothExpense;
 
     //validity check
     if (isNaN(incomeAmount) || incomeAmount < 0) {
-        alert("please provide a positiv income value");
-    } else if (isNaN(foodCost) || foodCost < 0) {
-        alert("please provide a positiv food value");
-    } else if (isNaN(rentCost) || rentCost < 0) {
-        alert("please provide a positiv rent value");
-    } else if (isNaN(clothCost) || clothCost < 0) {
-        alert("please provide a positiv cloth value");
-    } else if (incomeAmount < totalCost) {
-        alert("surpassed your income");
+        alert("Please provide a positive No String income value"); //errors will be displayed as Alert!
+    } else if (isNaN(foodExpense) || foodExpense < 0) {
+        alert("Please provide a positive No String food expense value");
+    } else if (isNaN(rentExpense) || rentExpense < 0) {
+        alert("Please provide a positive No String rent expense value");
+    } else if (isNaN(clothExpense) || clothExpense < 0) {
+        alert("Please provide a positive No String cloth expense value");
+    } else if (incomeAmount < totalExpense) {
+        alert("You have spent more than your Income!");
     }
     else {
+        //pushing results to frontend
         totalExpense.innerText = totalCost;
-        balanceAfterExpense.innerText = incomeAmount - totalCost;
+        balanceRemaining.innerText = incomeAmount - totalCost;
     }
 }
 
-
+//bonus part
 function calculateSavings() {
+    //setting all id values to variables (let)
 
-    let balanceAfterExpense = getElement("balance-remaining");
-    let totalExpense = getElement("expense-total");
+    let balanceRemaining = pushElementTo("balance-remaining");
+    let totalExpense = pushElementTo("expense-total");
     let incomeAmount = getParsedValueById("input-income");
     let savingPercentage = getParsedValueById("input-saving-percentage");
-    let savingAmount = getElement("saving-amount");
-    let remainBalance = getElement("final-remaining");
+    let savingAmount = pushElementTo("saving-amount");
+    let remainBalance = pushElementTo("final-remaining");
 
-    let savings = (savingPercentage / 100) * incomeAmount;
-    let finalBalance = incomeAmount - (savings + parseInt(totalExpense.innerText));
+    //getting remaining balance and totalExpense, parsing to variable 
+    let totalExpForFinalBalance = parseInt(totalExpense.innerText);
+    let balanceRemainingForSavingsCon = parseInt(balanceRemaining.innerText);
 
+    //calculating percentage and remaing balance after savings
+    let savings = (incomeAmount * savingPercentage) / 100;
+    let finalBalance = incomeAmount - (savings + totalExpForFinalBalance);
+
+    //checking if input has some error values
     if (isNaN(savingPercentage) || savingPercentage < 0) {
-        alert("percentage cant be negative");
-    } else if (savings > parseInt(balanceAfterExpense.innerText)) {
-        alert("you cant save mote than you hbve");
+        alert("Percentage Value Can not Be 'NEGAIVE or STRING'! ");
+    } else if (savings > balanceRemainingForSavingsCon) {
+        alert("You Can not Save More than Your Remaining Balance");
     } else {
+        //pushing results to frontend
         savingAmount.innerText = savings;
         remainBalance.innerText = finalBalance;
     }
