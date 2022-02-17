@@ -37,42 +37,42 @@
                             <!-- INCOME input fields with label -->
                             <div class="input-div w-75 text-end">
                                 <label class="label-text">Income: </label>
-                                <input type="text" class="input-field" id="">
+                                <input type="text" class="input-field" id="input-income">
                             </div>
                             <h5 class="text-center">Expenses</h5>
                             <!-- EXPENSE input fields with label -->
                             <div class="input-div w-75 text-end">
                                 <!--  -->
                                 <label class="label-text">Food: </label>
-                                <input type="text" class="input-field" id="">
+                                <input type="text" class="input-field" id="input-food">
                                 <!--  -->
                                 <br>
                                 <label class="label-text">Rent: </label>
-                                <input type="text" class="input-field" id="">
+                                <input type="text" class="input-field" id="input-rent">
                                 <!--  -->
                                 <br>
                                 <label class="label-text">Cloths: </label>
-                                <input type="text" class="input-field" id="">
+                                <input type="text" class="input-field" id="input-cloths">
                             </div>
                             <!-- =====calculate button===== -->
                             <div class="btn-div text-center pt-2">
-                                <button type="button" id="" class="btn btn-primary">Calculate</button>
+                                <button type="button" onclick='calculatingExpense()' id="calculate-button" class="btn btn-primary">Calculate</button>
                             </div>
                             <!-- ====TOTAL EXPENSE -->
-                            <h5 class="text-center pt-1 pb-3">Total Expense: <span>000</span></h5>
-                            <h5 class="text-center pb-1">Balance: <span>000</span></h5>
+                            <h5 class="text-center pt-1 pb-3">Total Expense: <span id="expense-total">000</span></h5>
+                            <h5 class="text-center pb-1">Balance: <span id="balance-total">000</span></h5>
 
                             <!-- ====BONUS SAVINGS==== -->
                             <div class="savings text-center">
                                 <label class="label-text">Save: </label>
-                                <input type="text" class="input-field w-25" id="">
+                                <input type="text" class="input-field w-25" id="input-saving-percentage">
                                 <label class="label-text">%</label>
                                 <button type="button" class="btn btn-primary ms-2">Save</button>
                             </div>
 
                             <!-- ====Saving Remaining -->
-                            <h5 class="text-center pt-1 pb-3">Saving Amount: <span>000</span></h5>
-                            <h5 class="text-center pb-3">Remaining Balance: <span>000</span></h5>
+                            <h5 class="text-center pt-1 pb-3">Saving Amount: <span id="saving-amount">000</span></h5>
+                            <h5 class="text-center pb-3">Remaining Balance: <span id="final-remaining">000</span></h5>
 
                         </div>
                     </div>
