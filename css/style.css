@@ -1,10 +1,13 @@
+
+/* STARTING CSS */
+
 *{
     margin: 0;
     padding: 0;
 }
 
 .header-title{
-    color: #3a3a3a;
+    color: #007ACC;
 }
 .money-icon{
     color: #D6B34F;
@@ -26,5 +29,14 @@
 .label-text{
     font-size: 18px;
     color: #3a3a3a;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+/* ======================================= */
+
+@media only screen and (max-width: 575px) {
+
+    .input-div {
+        width: 85%!important;
+    }
 }

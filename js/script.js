@@ -12,6 +12,7 @@ function pushElementTo(id_name) {
 
 function calculateExpense() {
     //setting all id values to variables (let)
+    //calling function inside a function
     let incomeAmount = getParsedValueById("input-income");
     let foodExpense = getParsedValueById("input-food");
     let rentExpense = getParsedValueById("input-rent");
@@ -31,7 +32,7 @@ function calculateExpense() {
         alert("Please provide a positive No String rent expense value");
     } else if (isNaN(clothExpense) || clothExpense < 0) {
         alert("Please provide a positive No String cloth expense value");
-    } else if (incomeAmount < totalExpense) {
+    } else if (incomeAmount < totalCost) {
         alert("You have spent more than your Income!");
     }
     else {
